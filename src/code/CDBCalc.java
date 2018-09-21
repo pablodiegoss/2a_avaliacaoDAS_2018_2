@@ -3,7 +3,9 @@ package code;
 public class CDBCalc {
 
 	public static double calcularRendimento(int dias, double aplicacao, double taxa) {
-		return 1.0829;
+		double bruto =calcularRendimentoBruto(dias, aplicacao, taxa); 
+		double imposto = calcularImpostoDeRenda(dias, aplicacao, taxa); 
+		return  ((bruto-imposto)/aplicacao)*100;
 	}
 
 	public static double calcularRendimentoBruto(int dias, double aplicacao, double taxa) {
