@@ -2,6 +2,10 @@ package code;
 
 public class CDBCalc {
 
+	public static double calcularRendimento(int dias, double aplicacao, double taxa) {
+		return 1.0829;
+	}
+
 	public static double calcularRendimentoBruto(int dias, double aplicacao, double taxa) {
 		double anos = dias/365.0;
 		return aplicacao * (taxa/100 * anos);

@@ -1,6 +1,10 @@
 package tests;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
+
+import code.CDBCalc;
 
 public class TestRendimentoLiquido {
 	
@@ -9,6 +13,6 @@ public class TestRendimentoLiquido {
 		int dias = 60;
 		double aplicacao = 1000.0;
 		double taxaDeJuros = 8.5;
-		assertEquals(1.0829, calcularRendimento(dias,aplicacao,taxaDeJuros),0.00005);
+		assertEquals(1.0829, CDBCalc.calcularRendimento(dias,aplicacao,taxaDeJuros),0.00005);
 	}
 }
