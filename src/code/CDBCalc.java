@@ -7,6 +7,18 @@ public class CDBCalc {
 		return aplicacao * (taxa/100 * anos);
 	}
 	public static double calcularImpostoDeRenda(int dias, double aplicacao, double taxa) {
-		return 3.14;
+		return	calcularRendimentoBruto(dias, aplicacao, taxa) * aliquotaImposto(dias);
+	}
+	
+	private static double aliquotaImposto(int dias) {
+		if (dias <=180 ) {
+			return 0.225;
+		}else if(dias <= 360) {
+			return 0.2;
+		}else if(dias <= 720) {
+			return 0.175;
+		}else {
+			return 0.15;
+		}
 	}
 }
