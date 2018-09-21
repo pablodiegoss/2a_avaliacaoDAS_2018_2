@@ -15,7 +15,7 @@ import code.CDBCalc;
 @RunWith(Parameterized.class)
 public class TestRendimentoLiquido{
 	
-	@Parameters(name="index = dias= {0}, aplicacao= {1}, taxa= {2}, rendimento esperado ={3}")
+	@Parameters(name="{index} = dias= {0}, aplicacao= {1}, taxa= {2}, rendimento esperado ={3}")
 	public static Collection<Object[]> data(){
 		return Arrays.asList(new Object[][] {
 			{ 60, 1000.0, 8.5, 1.0829},
