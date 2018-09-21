@@ -1,32 +1,43 @@
 package tests;
-
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 import code.CDBCalc;
 
-public class TestImpostoDeRenda {
+@RunWith(Parameterized.class)
+public class TestImpostoDeRenda{
+	
+	@Parameters(name="index = dias= {0}, aplicacao= {1}, taxa= {2}, imposto={3}")
+	public static Collection<Object[]> data(){
+		return Arrays.asList(new Object[][] {
+			{ 60, 1000.0, 8.5, 3.14},
+			{ 120, 500.0, 8.0, 2.96},
+			{ 240, 3000.0, 9.0, 35.51}
+		});
+	}
+	
+	@Parameter
+	public int dias;
+	
+	@Parameter(1)
+	public double aplicacao;
 
+	@Parameter(2)
+	public double taxa;
+
+	@Parameter(3)
+	public double imposto;
+	
 	@Test
-	public void testImposto1() {
-		int dias = 60;
-		double aplicacao = 1000.0;
-		double taxaDeJuros = 8.5;
-		assertEquals(3.14, CDBCalc.calcularImpostoDeRenda(dias,aplicacao,taxaDeJuros),0.005);
-	}
-	@Test
-	public void testImposto2() {
-		int dias = 120;
-		double aplicacao = 500.0;
-		double taxaDeJuros = 8;
-		assertEquals(2.96, CDBCalc.calcularImpostoDeRenda(dias,aplicacao,taxaDeJuros),0.005);
-	}
-	@Test
-	public void testImposto3() {
-		int dias = 240;
-		double aplicacao = 3000.0;
-		double taxaDeJuros = 9;
-		assertEquals(35.51, CDBCalc.calcularImpostoDeRenda(dias,aplicacao,taxaDeJuros),0.005);
+	public void testMethod() {
+		assertEquals(imposto, CDBCalc.calcularImpostoDeRenda(dias, aplicacao, taxa), 0.005);
 	}
 }
