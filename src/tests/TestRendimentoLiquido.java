@@ -22,4 +22,11 @@ public class TestRendimentoLiquido {
 		double taxaDeJuros = 8;
 		assertEquals(2.0384, CDBCalc.calcularRendimento(dias,aplicacao,taxaDeJuros),0.00005);
 	}
+	@Test
+	public void testRendimento3() {
+		int dias = 240;
+		double aplicacao = 3000.0;
+		double taxaDeJuros = 9;
+		assertEquals(4.7342, CDBCalc.calcularRendimento(dias,aplicacao,taxaDeJuros),0.00005);
+	}
 }
