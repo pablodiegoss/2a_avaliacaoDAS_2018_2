@@ -13,4 +13,12 @@ public class TestRendimentoBruto {
 		double taxaDeJuros = 8.5;
 		assertEquals(13.97, CDBCalc.calcularRendimentoBruto(dias,aplicacao,taxaDeJuros), 0.005);
 	}
+	
+	@Test
+	public void testrb2() {
+		int dias = 120;
+		double aplicacao = 500.0;
+		double taxaDeJuros = 8.0;
+		assertEquals(13.15, CDBCalc.calcularRendimentoBruto(dias,aplicacao,taxaDeJuros), 0.005);
+	}
 }
