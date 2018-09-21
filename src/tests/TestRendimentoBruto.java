@@ -1,11 +1,9 @@
 package tests;
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
+
+import code.CDBCalc;
 
 public class TestRendimentoBruto {
 	@Test
@@ -13,6 +11,6 @@ public class TestRendimentoBruto {
 		int dias = 60;
 		double aplicacao = 1000.0;
 		double taxaDeJuros = 8.5;
-		assertEquals(13.97, calcularRendimentoBruto(dias,aplicacao,taxaDeJuros), 0.001);
+		assertEquals(13.97, CDBCalc.calcularRendimentoBruto(dias,aplicacao,taxaDeJuros), 0.005);
 	}
 }
